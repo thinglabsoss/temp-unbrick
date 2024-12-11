@@ -1,0 +1,35 @@
+#!/bin/sh
+# Script to put some files in place to keep the carthing somewhat working
+# after the API is taken offline. Local control will still work until
+# Spotify completely removes BT/Carthing support from the app. At that point.
+# you will need to downgrade the app but even that won't work forever
+
+# Log to dmesg/kmsg and local shell
+printToKmsg() { echo UNBRICK: $1 && echo UNBRICK: $1 > /dev/kmsg; }
+
+printToKmsg "Unbricking the bird"
+printToKmsg "Creating bird settings"
+BIRD_SETTINGS=/var/lib/qt-superbird-app/settings/
+mkdir -p $BIRD_SETTINGS
+mkdir -p $BIRD_SETTINGS/rcs_devices
+touch $BIRD_SETTINGS/can_use_superbird
+touch $BIRD_SETTINGS/local-storage-data
+touch $BIRD_SETTINGS/onboarding_status
+touch $BIRD_SETTINGS/rcs
+touch $BIRD_SETTINGS/setup_state
+
+# We use bind mounts in order to prevent qt-superbird-app from
+# overriding any of these files.
+
+BIRD_SETTINGS=/var/lib/qt-superbird-app/settings/
+printToKmsg "Mounting bird settings"
+mount --bind /usr/unbrick/rcs_devices $BIRD_SETTINGS/rcs_devices
+mount --bind /usr/unbrick/can_use_superbird $BIRD_SETTINGS/can_use_superbird
+mount --bind /usr/unbrick/local-storage-data $BIRD_SETTINGS/local-storage-data
+mount --bind /usr/unbrick/onboarding_status $BIRD_SETTINGS/onboarding_status
+mount --bind /usr/unbrick/rcs $BIRD_SETTINGS/rcs
+mount --bind /usr/unbrick/setup_state $BIRD_SETTINGS/setup_state
+
+printToKmsg "BIRDS AREN'T REAL BIRDS AREN'T REAL BIRDS AREN'T REAL"
+printToKmsg "BIRDS AREN'T REAL BIRDS AREN'T REAL BIRDS AREN'T REAL"
+printToKmsg "BIRDS AREN'T REAL BIRDS AREN'T REAL BIRDS AREN'T REAL"
