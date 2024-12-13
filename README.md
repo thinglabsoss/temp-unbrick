@@ -4,7 +4,7 @@ A method for temporarily unbricking the Spotify Car Thing
 Join the Discord for support: https://tl.mt/d
 
 # Disclaimer: This will only temporarily unbrick the Car Thing. 
-Once Spotify turns off the server side APIs, some functions like library browsing, voice controls, and tips will stop working. Local playback controls will keep working until Spotify completely removes Car Thing support from the mobile app. At that point, your only option will be to downgrade the Spotify app but even that will eventually stop working.
+Since Spotify turned off the server side APIs, some functions like library browsing, voice controls, and presets have stopped working. Local playback controls will keep working until Spotify completely removes Car Thing support from the mobile app. At that point, your only option will be to downgrade the Spotify app but even that will eventually stop working.
 
 We are currently working on keeping the original UI working even after all that happens.
 
@@ -28,4 +28,4 @@ We are currently working on keeping the original UI working even after all that 
 After you install the unbrick with one of the above methods, you may need to re-pair your phone. If it doesn't automatically connect, just press `Go to phone list` then `Add a new phone`. Once the Car Thing is in pairing mode, go directly to your phone's Bluetooth settings (where you'd pair Bluetooth headphones, speakers, etc.) and pair to it there. Your Car Thing should start working right after pairing it.
 
 ## How it works
-Spotify only added the kill switch in the last version of their firmware (8.9.2) so using an older version means the Car Thing will keep working until the server APIs get shut off. After that point, the Car Thing will only be able to do local playback controls as that is handled entirely within the mobile app. The files in this repo will bypass the setup process on the Car Thing so that it can keep functioning even after the API gets shut off.
+Spotify only added the kill switch in the last version of their firmware (8.9.2) so using an older version means the Car Thing will keep working until the server APIs get shut off. After that point, the Car Thing will only be able to do local playback controls as that is handled entirely within the mobile app. The files in this repo will bypass the setup process on the Car Thing so that it can keep functioning even after the APIs gets shut off.
