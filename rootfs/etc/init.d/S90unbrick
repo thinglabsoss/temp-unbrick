@@ -13,7 +13,6 @@ BIRD_SETTINGS=/var/lib/qt-superbird-app/settings/
 mkdir -p $BIRD_SETTINGS
 mkdir -p $BIRD_SETTINGS/rcs_devices
 touch $BIRD_SETTINGS/can_use_superbird
-touch $BIRD_SETTINGS/local-storage-data
 touch $BIRD_SETTINGS/onboarding_status
 touch $BIRD_SETTINGS/rcs
 touch $BIRD_SETTINGS/setup_state
@@ -25,7 +24,6 @@ BIRD_SETTINGS=/var/lib/qt-superbird-app/settings/
 printToKmsg "Mounting bird settings"
 mount --bind /usr/unbrick/rcs_devices $BIRD_SETTINGS/rcs_devices
 mount --bind /usr/unbrick/can_use_superbird $BIRD_SETTINGS/can_use_superbird
-mount --bind /usr/unbrick/local-storage-data $BIRD_SETTINGS/local-storage-data
 mount --bind /usr/unbrick/onboarding_status $BIRD_SETTINGS/onboarding_status
 mount --bind /usr/unbrick/rcs $BIRD_SETTINGS/rcs
 mount --bind /usr/unbrick/setup_state $BIRD_SETTINGS/setup_state
